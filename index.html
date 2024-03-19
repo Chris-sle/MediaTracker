@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaTracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="updateView()">
+    <div id="app"></div>
+
+    <script src="js/Model.js"></script>
+    
+    <script src="js/homepageView.js"></script>
+
+    <script src="js/DirectoryView.js"></script>
+    
+
+    <script src="js/commonController.js"></script>
+
+    <script>
+        function updateView() {
+            const page = model.app.currentPage;
+            if (page == 'homepage') updateViewHomepage();
+            else if (page == 'directory') updateViewDirectory();
+        }
+    </script>
+</body>
+</html>
