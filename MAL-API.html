@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Anime Data</title>
+</head>
+<body>
+    <div class="container">
+        <p>My Anime ListViewer</p>
+        <form id="searchForm">
+            <label class="lab" for="searchInput">Search</label>
+            <input
+                id="searchInput" 
+                type="text" 
+                placeholder="Enter a anime title">
+        </form>
+        <button onclick="fetchAnimeData()">search</button>
+    </div>
+
+    <script>
+    function fetchAnimeData() {
+        // Ensure you're using a valid 'X-MAL-CLIENT-ID'.
+        const clientId = 'Client-ID'; // Replace with your actual Client ID.
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const searchInput = document.getElementById('searchInput').value;
+        const encodedSearchInput = encodeURIComponent(searchInput);
+        const targetUrl = `https://api.myanimelist.net/v2/anime?q=${encodedSearchInput}&limit=4`;
+
+        fetch(proxyUrl + targetUrl, {
+            headers: {'X-MAL-CLIENT-ID': clientId},
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.error('Error:', err));
+    }
+    
+    </script>
+</body>
+</html>

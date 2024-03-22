@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Anime Data</title>
+</head>
+<body>
+    <div class="container">
+        <p>My Anime ListViewer using AniList</p>
+        <form id="searchForm">
+            <label class="lab" for="searchInput">Search</label>
+            <input
+                id="searchInput" 
+                type="text" 
+                placeholder="Enter a anime title">
+        </form>
+        <button onclick="fetchAnimeDataWithName()">search</button>
+    </div>
+
+    <script>
+        
+        function fetchAnimeDataWithName() {
+            const searchInput = document.getElementById('searchInput').value;
+            let query = `
+            query ($id: Int, $page: Int, $perPage: Int, $search: String) {
+            Page (page: $page, perPage: $perPage) {
+                pageInfo {
+                    total
+                    currentPage
+                    lastPage
+                    hasNextPage
+                    perPage
+                }
+                media (id: $id, search: $search) {
+                    id
+                    title {
+                        romaji
+                        english
+                        }
+                    coverImage {
+                        extraLarge
+                        large
+                        medium
+                        color
+                        }
+                    }
+                }
+            }`;
+        
+            console.log(searchInput);
+            let variables = {
+                search: `${searchInput}`,
+                page: 1,
+                perPage: 3
+            };
+
+            let url = 'https://graphql.anilist.co',
+            options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+            },
+                body: JSON.stringify({
+                    query: query,
+                    variables: variables
+                })
+            };
+
+            fetch(url, options)
+                .then(handleResponse)
+                .then(handleData)
+                .catch(handleError);
+        }
+
+        function fetchAnimeDataWithID() {
+            let query = /*HTML*/`
+            query ($id: Int) { # Define which variables will be used in the query (id)
+            Media (id: $id, type: ANIME) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)
+                id
+                title {
+                    romaji
+                    english
+                    native
+                    }
+                coverImage {
+                    extraLarge
+                    large
+                    medium
+                    color
+                    }
+                }
+            }`;
+
+        // Define our query variables and values that will be used in the query request
+            let variables = {
+                id: 15125
+            };
+
+        // Define the config we'll need for our Api request
+            let url = 'https://graphql.anilist.co',
+            options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: query,
+                    variables: variables
+                })
+            };
+
+            // Make the HTTP Api request
+            fetch(url, options)
+                .then(handleResponse)
+                .then(handleData)
+                .catch(handleError);
+        }
+
+        function handleResponse(response) {
+                return response.json().then(function (json) {
+                return response.ok ? json : Promise.reject(json);
+            });
+        }
+
+        function handleData(data) {
+            console.log(data);
+        }
+
+        function handleError(error) {
+            alert('Error, check console');
+            console.error(error);
+        }
+    
+    
+    </script>
+</body>
+</html>
