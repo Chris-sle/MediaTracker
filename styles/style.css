@@ -24,6 +24,18 @@ body {
     align-items: center;
 }
 
+.darkmode {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.darkmode span {
+    cursor: pointer;
+}
+
 .header img {
+    cursor: pointer;
     height: 30px;
+    margin-right: 5px;
 }

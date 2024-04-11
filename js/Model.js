@@ -18,7 +18,10 @@ const model = {
             errorMessage: '',
         },
         homepage: {
-            searchbar: 'Write here to search',
+            movieIsChecked: false,
+            seriesIsChecked: false,
+            animeIsChecked: false,
+            searchbar: null,
         },
         directory: {},
     },

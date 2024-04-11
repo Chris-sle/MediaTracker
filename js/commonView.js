@@ -8,8 +8,10 @@ function updateView() {
 function createHtmlHeader() {
     let html = /*HTML*/ `
         <div class="header">
-            <span onlcick="darkmode()">&#9898</span>
-            <p>Dark Mode </p> 
+            <div class="darkmode">
+                <span onlcick="darkmode()">&#9898</span>
+                <p>Dark Mode </p>
+            </div> 
             <button onclick="goTo('directory')">Directory</button>
             <img
                 onclick="goTo('profile')" 

@@ -2,3 +2,24 @@
     display: grid;
     justify-items: center;
 }
+
+.introduction {
+    width: 80vw;
+}
+
+.searchField {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 0.5em;
+}
+
+.searchField p {
+    margin-bottom: -5px;
+}
+
+#showResultInGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 90vw;
+}
