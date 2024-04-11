@@ -1,0 +1,15 @@
+.loginContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 0.1em solid black;
+    justify-items: center;
+}
+
+#logginPageInputs{
+    
+    display: flex;
+    flex-direction: column;
+    border: 0.1em solid black;
+    gap: 0.5em;
+
+}
