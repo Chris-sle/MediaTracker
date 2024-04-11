@@ -1,18 +1,19 @@
 const model = {
     app: {
-        currentPage: 'logginpage',
+        currentPage: 'home',
         darkMode: false,
-        loggedInUser: null,
+        loggedInUser: 'Chris',
     },
     inputs: {
         loginpage: {
             username: null,
             passWord: null,
             registerNewUser: {
-                usernameInput: 'Enter New Username',
-                passWordInput: 'Enter New Password',
-                rePassWordInput: 'Enter New Password Again',
-                emailImput: 'Enter email'
+                isActive: false,
+                usernameInput: null,
+                passWordInput: null,
+                rePassWordInput: null,
+                emailInput: null
             },
             errorMessage: '',
         },

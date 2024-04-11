@@ -11,19 +11,19 @@ body {
 
 #app {
     height: 100vh;
+    /* width: 100dvw; */
     border: 0.1em solid black;
-    display: grid;
-    place-items: center;
-}
-
-img {
-    height: 50px;
+    
 }
 
 .header {
-    height: 60px;
-    width: 100dvw;
+    height: 40px;
     background-color: blueviolet;
     display: flex;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img {
+    height: 30px;
 }

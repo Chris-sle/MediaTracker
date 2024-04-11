@@ -5,30 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediaTracker</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/loginPage.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 <body onload="updateView()">
     <div id="app"></div>
 
     <script src="js/Model.js"></script>
 
-    <script src="js/loginpage/loginPageView.js"></script>
+    <script src="js/loginpage/loginView.js"></script>
     <script src="js/loginpage/loginController.js"></script>
     
-    <script src="js/homepageView.js"></script>
+    <script src="js/homepage/homeView.js"></script>
 
-    <script src="js/DirectoryView.js"></script>
+    <script src="js/directory/directoryView.js"></script>
     
-
+    <script src="js/commonView.js"></script>
     <script src="js/commonController.js"></script>
-
-    <script>
-        function updateView() {
-            const page = model.app.currentPage;
-            if (page == 'homepage') updateViewHomepage();
-            else if (page == 'directory') updateViewDirectory();
-            else if (page == 'logginpage') logginPageView();
-        }
-    </script>
 </body>
 </html>
