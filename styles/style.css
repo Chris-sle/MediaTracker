@@ -14,10 +14,11 @@ body {
     /* width: 100dvw; */
     border: 0.1em solid black;
     
+    
 }
 
 .header {
-    height: 40px;
+    height: 5vh;
     background-color: blueviolet;
     display: flex;
     justify-content: space-between;

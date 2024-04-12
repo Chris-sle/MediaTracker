@@ -21,3 +21,22 @@ function updateModel(inputId) {
         document.getElementById('seriesCheckbox').checked = false;
     }
 }
+
+function search() {
+    const homepage =  model.inputs.homepage;
+    const searchInput = model.inputs.homepage.searchbar;
+
+    if(homepage.movieIsChecked = true){
+        
+    }
+    if(homepage.seriesIsChecked = true){
+
+    }
+    if(homepage.animeIsChecked = true){
+        searchForAnimeWithAniListAPI()
+    }
+}
+
+function searchForAnimeWithAniListAPI() {
+    let html = '';
+}

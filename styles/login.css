@@ -3,6 +3,12 @@
     grid-template-columns: 1fr;
     border: 0.1em solid black;
     justify-items: center;
+    align-content: center;
+    height: 100vh;
+    background-image: url('/img/AIbackgroundTestForLogin.jpg');
+    background-repeat: no-repeat; /* Forhindrer gjentakelse av bildet */
+    background-size: cover; /* Dekker hele tilgjengelig plass, kan også bruke contain for å passe inn hele bildet */
+    background-position: center; /* Sentrerer bildet i div-en */ 
 }
 
 #logginPageInputs{

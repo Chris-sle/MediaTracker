@@ -4,7 +4,7 @@ function login() {
     if (userId == null) {
         login.errorMessage = 'Feil brukernavn og/eller passord';
     } else {
-        model.app.currentPage = 'homepage';
+        model.app.currentPage = 'home';
         model.app.loggedInUser = userId;
         login.errorMessage = '';
         login.username = null;
@@ -14,8 +14,9 @@ function login() {
 }
 
 function findUser() {
+    console.log("Logging inn med:", model.inputs.loginpage.username, model.inputs.loginpage.passWord);
     for (let user of model.data.registeredUsers) {
-        if (user.userName == model.inputs.loginpage.username
+        if (user.username == model.inputs.loginpage.username
             && user.passWord == model.inputs.loginpage.passWord) {
             return user.id;
         }

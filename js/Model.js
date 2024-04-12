@@ -1,8 +1,8 @@
 const model = {
     app: {
-        currentPage: 'home',
+        currentPage: null,
         darkMode: false,
-        loggedInUser: 'Chris',
+        loggedInUser: '',
     },
     inputs: {
         loginpage: {
@@ -29,7 +29,7 @@ const model = {
         registeredUsers: [
             {
                 id: 1,
-                userName: 'Chris',
+                username: 'Chris',
                 passWord: '1234',
                 email: 'chris@this.com',
                 profileImg: null,
