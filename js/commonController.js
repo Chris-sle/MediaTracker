@@ -5,5 +5,5 @@ function goTo(page) {
 
 function logOut(){
     model.app.loggedInUser = null;
-    goToPage('loginpage');
+    goTo(null);
 }

@@ -27,5 +27,95 @@
 #showResultInGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    width: 90vw;
+    gap: 0.5em;
+    margin-top: 1em;
+    width: auto;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+/*Result cards--------------------------------------------*/
+.resultCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 30em;
+    width: auto;
+    border: 0.2em solid rgb(122, 58, 168);
+    border-radius: 15px;
+    padding: 0.2em;
+    cursor: pointer;
+    overflow-wrap: normal;
+}
+
+.cardTitle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    grid-column: span 2;
+}
+
+.cardTitle span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+
+.cardTitle p {
+    font-size: small;
+    margin-top: -0.1em;
+}
+
+.resultCard .cardContent {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    height: 24em;
+    width: auto;
+}
+
+.cardContent img {
+    grid-column: span 2;
+    overflow: auto;
+    max-width: 100%;
+}
+
+.cardContent button {
+    grid-column: span 2;
+    height: 1.3em;
+}
+
+.resultCard .description {
+    height: 10em;
+    grid-column: span 2;
+    overflow-y: auto;
+
+}
+/* Styling the entire scrollbar (width) */
+.description::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Styling the track part of the scrollbar */
+.description::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Styling the thumb part of the scrollbar */
+.description::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Styling the hover state of the thumb part of the scrollbar */
+.description::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

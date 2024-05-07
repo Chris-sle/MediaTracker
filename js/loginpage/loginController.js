@@ -5,7 +5,7 @@ function login() {
         login.errorMessage = 'Feil brukernavn og/eller passord';
     } else {
         model.app.currentPage = 'home';
-        model.app.loggedInUser = userId;
+        model.app.loggedInUserId = userId;
         login.errorMessage = '';
         login.username = null;
         login.passWord = null;
@@ -47,25 +47,21 @@ function registerNewUser() {
         model.data.registeredUsers.push(newUser);
 
         model.app.currentPage = 'homepage'
-        model.app.loggedInUser = model.inputs.loginpage.registerNewUser.usernameInput;
+        model.app.loggedInUser = model.data.registeredUsers.length + 1;
         
         resetRegistrationInputs();
         updateView()
     } else {
-        // Handle password mismatch, perhaps by updating the errorMessage
-        console.error("Passwords do not match.");
-        // Update the model to reflect the error and invoke view update if applicable
         model.inputs.loginpage.errorMessage = "Passwords do not match.";
-        // For example: logginPageView();
+        updateView()
     }
 }
 
 function resetRegistrationInputs() {
-    // Resets the input fields for registration
     model.inputs.loginpage.registerNewUser = {
         usernameInput: '',
         passWordInput: '',
         rePassWordInput: '',
-        emailInput: '', // Assuming typo correction has been applied
+        emailInput: '',
     };
 }
